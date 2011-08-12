@@ -22,7 +22,9 @@ public class SortingTest extends TestCase {
 		
 		input = new int[INPUT_LENGTH];
 		for (int i = 0; i < input.length; i++) {
-			input[i] = rnd.nextInt();
+//			input[i] = Math.abs(rnd.nextInt()) % 1000000;
+			input[i] = Math.abs(rnd.nextInt());
+//			input[i] = rnd.nextDouble();
 		}
 		
 		ref = Arrays.copyOf(input, input.length);
@@ -45,7 +47,13 @@ public class SortingTest extends TestCase {
 	public void testHeapsort() {
 //		Arrays.sort(input);
 //		Sorting.mergeSort(input);
-		Sorting.heapSortCorr(input);
+		Sorting.mergeSortQ(input);
+//		Sorting.heapSort(input);
+//		Sorting.quickSort(input);
+//		Sorting.quickSortHoare(input);
+//		Sorting.countingSort(input);
+//		Sorting.radixSort(input);
+//		Sorting.bucketSort(input);
 	}
 
 }
