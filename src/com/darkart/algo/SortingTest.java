@@ -47,7 +47,7 @@ public class SortingTest extends TestCase {
 	public void testHeapsort() {
 //		Arrays.sort(input);
 //		Sorting.mergeSort(input);
-		Sorting.mergeSortQ(input);
+//		Sorting.mergeSortQ(input);
 //		Sorting.heapSort(input);
 //		Sorting.quickSort(input);
 //		Sorting.quickSortHoare(input);

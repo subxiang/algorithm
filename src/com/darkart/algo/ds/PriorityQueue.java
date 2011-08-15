@@ -1,4 +1,4 @@
-package com.darkart.algo;
+package com.darkart.algo.ds;
 
 public interface PriorityQueue<T extends Comparable<T>> {
 	void insert(T e);

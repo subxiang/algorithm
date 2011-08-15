@@ -163,13 +163,13 @@ public class Sorting {
 		if (end <= start) {
 			return;
 		} else {
-			int i = partition(input, start, end);
+			int i = partitionQuick(input, start, end);
 			quickSort(input, start, i - 1);
 			quickSort(input, i + 1, end);
 		}
 	}
 
-	private static int partition(int[] input, int start, int end) {
+	public static int partitionQuick(int[] input, int start, int end) {
 		int x = input[end];
 		int i = start - 1;
 		for (int j = start; j <= end - 1; j++) {
@@ -202,7 +202,7 @@ public class Sorting {
 		}
 	}
 	
-	private static int partitionHoare(int[] input, int start, int end) {
+	public static int partitionHoare(int[] input, int start, int end) {
 		int i = start - 1;
 		int j = end + 1;
 		int x = input[start];
@@ -241,7 +241,7 @@ public class Sorting {
 		int tmp = input[end];
 		input[end] = input[i];
 		input[i] = tmp;
-		return partition(input, start, end);
+		return partitionQuick(input, start, end);
 	}
 	
 	public static void stoogeSort(int[] input) {
