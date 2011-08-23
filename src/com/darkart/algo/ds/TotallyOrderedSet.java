@@ -1,8 +1,8 @@
 package com.darkart.algo.ds;
 
-public interface TotallyOrderedSet extends DynamicSet {
-	Object minimum();
-	Object maximum();
-	Object successor();
-	Object predecessor();
+public interface TotallyOrderedSet<T extends Comparable<?>> extends DynamicSet {
+	T minimum();
+	T maximum();
+	T successor();
+	T predecessor();
 }

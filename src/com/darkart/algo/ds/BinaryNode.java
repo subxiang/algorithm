@@ -1,38 +1,39 @@
 package com.darkart.algo.ds;
 
-public class BinaryNode {
-	private BinaryNode parent;
-	private BinaryNode leftChild;
-	private BinaryNode rightChild;
-	private Object data;
+public class BinaryNode<T extends Comparable<T>> implements Node {
+	private BinaryNode<T> parent;
+	private BinaryNode<T> leftChild;
+	private BinaryNode<T> rightChild;
+	private T data;
 	
-	public BinaryNode(Object data) {
+	public BinaryNode(T data) {
 		setData(data);
 	}
 	
-	public Object getData() {
+	@Override
+	public T getData() {
 		return data;
 	}
-	public void setData(Object data) {
+	public void setData(T data) {
 		this.data = data;
 	}
 	
-	public BinaryNode getParent() {
+	public BinaryNode<T> getParent() {
 		return parent;
 	}
-	public void setParent(BinaryNode parent) {
+	public void setParent(BinaryNode<T> parent) {
 		this.parent = parent;
 	}
-	public BinaryNode getLeftChild() {
+	public BinaryNode<T> getLeftChild() {
 		return leftChild;
 	}
-	public void setLeftChild(BinaryNode leftChild) {
+	public void setLeftChild(BinaryNode<T> leftChild) {
 		this.leftChild = leftChild;
 	}
-	public BinaryNode getRightChild() {
+	public BinaryNode<T> getRightChild() {
 		return rightChild;
 	}
-	public void setRightChild(BinaryNode rightChild) {
+	public void setRightChild(BinaryNode<T> rightChild) {
 		this.rightChild = rightChild;
 	}
 }

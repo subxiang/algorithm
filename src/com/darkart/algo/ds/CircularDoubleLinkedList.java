@@ -1,7 +1,7 @@
 package com.darkart.algo.ds;
 
 public class CircularDoubleLinkedList implements List {
-	private Node nil = new Node(null);
+	private DoubleLinkedNode nil = new DoubleLinkedNode(null);
 	
 	public CircularDoubleLinkedList() {
 		nil.setPrev(nil);
@@ -9,8 +9,8 @@ public class CircularDoubleLinkedList implements List {
 	}
 
 	@Override
-	public Node search(Object obj) {
-		for (Node n = nil.getNext(); n != nil; n = n.getNext()) {
+	public DoubleLinkedNode search(Object obj) {
+		for (DoubleLinkedNode n = nil.getNext(); n != nil; n = n.getNext()) {
 			if (n.getData().equals(obj)) {
 				return n;
 			}
@@ -20,7 +20,7 @@ public class CircularDoubleLinkedList implements List {
 
 	@Override
 	public void insert(Object obj) {
-		Node node = new Node(obj);
+		DoubleLinkedNode node = new DoubleLinkedNode(obj);
 		
 		node.setPrev(nil);
 		node.setNext(nil.getNext());
@@ -30,7 +30,7 @@ public class CircularDoubleLinkedList implements List {
 
 	@Override
 	public void delete(Object obj) {
-		Node node = search(obj);
+		DoubleLinkedNode node = search(obj);
 		if (node != null) {
 			node.getPrev().setNext(node.getNext());
 			node.getNext().setPrev(node.getPrev());

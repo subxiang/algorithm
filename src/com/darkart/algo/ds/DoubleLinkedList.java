@@ -1,11 +1,11 @@
 package com.darkart.algo.ds;
 
 public class DoubleLinkedList implements List {
-	private Node head;
+	private DoubleLinkedNode head;
 
 	@Override
-	public Node search(Object key) {
-		Node node = head;
+	public DoubleLinkedNode search(Object key) {
+		DoubleLinkedNode node = head;
 		while (node != null && node.getData() != key) {
 			node = node.getNext();
 		}
@@ -14,7 +14,7 @@ public class DoubleLinkedList implements List {
 
 	@Override
 	public void insert(Object obj) {
-		Node node = new Node(obj);
+		DoubleLinkedNode node = new DoubleLinkedNode(obj);
 		node.setNext(head);
 		if (node.getNext() != null) {
 			node.getNext().setPrev(node);
@@ -24,7 +24,7 @@ public class DoubleLinkedList implements List {
 
 	@Override
 	public void delete(Object obj) {
-		Node node = (Node) search(obj);
+		DoubleLinkedNode node = search(obj);
 		if (node != null) {
 			if (node.getPrev() != null) {
 				node.getPrev().setNext(node.getNext());

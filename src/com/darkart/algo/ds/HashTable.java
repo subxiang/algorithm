@@ -1,6 +1,6 @@
 package com.darkart.algo.ds;
 
-public class HashTable {
+public class HashTable implements Table {
 	private List[] lists;
 	private Hasher hasher;
 	
@@ -25,24 +25,5 @@ public class HashTable {
 	public void remove(Object key) {
 		int k = hasher.hash(key);
 		lists[k].delete(new KeyedData(key, null));
-	}
-	
-	private class KeyedData {
-		private Object key;
-		private Object data;
-		
-		public KeyedData(Object key, Object data) {
-			this.key = key;
-			this.data = data;
-		}
-		
-		public Object getData() {
-			return data;
-		}
-		
-		@Override
-		public boolean equals(Object obj) {
-			return (obj instanceof KeyedData) && (((KeyedData)obj).key.equals(key));
-		}
 	}
 }

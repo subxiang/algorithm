@@ -8,8 +8,12 @@ import junit.framework.TestCase;
 
 import org.junit.Test;
 
+import com.darkart.algo.ds.BinaryTree;
+import com.darkart.algo.ds.Node;
+import com.darkart.algo.ds.Visitor;
+
 public class SortingTest extends TestCase {
-	private static final int INPUT_LENGTH = 10000000;
+	private static final int INPUT_LENGTH = 1000000;
 	private int[] input;
 	private int[] ref;
 	
@@ -45,15 +49,33 @@ public class SortingTest extends TestCase {
 
 	@Test
 	public void testHeapsort() {
-//		Arrays.sort(input);
-//		Sorting.mergeSort(input);
-//		Sorting.mergeSortQ(input);
-//		Sorting.heapSort(input);
-//		Sorting.quickSort(input);
-//		Sorting.quickSortHoare(input);
-//		Sorting.countingSort(input);
 //		Sorting.radixSort(input);
+//		Sorting.quickSortHoare(input);
+//		Sorting.quickSort(input);
+//		Arrays.sort(input);
+//		Sorting.mergeSortQ(input);
+//		Sorting.mergeSort(input);
+//		Sorting.heapSort(input);
+//		Sorting.insertionSort(input);
+//		Sorting.bubbleSort(input);
+		
+//		Sorting.countingSort(input);
 //		Sorting.bucketSort(input);
+		
+//		BinaryTree<Integer> tree = new BinaryTree<Integer>();
+//		for (int i = 0; i < input.length; i++) {
+//			tree.insert(input[i]);
+//		}
+//		
+//		tree.inOrderWalk(new Visitor() {
+//			int i = 0;
+//
+//			@Override
+//			public void visit(Node n) {
+//				input[i++] = (Integer)n.getData();
+//			}
+//			
+//		});
 	}
 
 }
