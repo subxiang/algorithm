@@ -8,7 +8,7 @@ public class RedBlackTree<T extends Comparable<T>> {
 	private RedBlackNode<T> root;
 	
 	public RedBlackTree() {
-		nil = new RedBlackNode(Color.BLACK);
+		nil = new RedBlackNode<T>(Color.BLACK);
 		nil.setParent(nil);
 		nil.setLeftChild(nil);
 		nil.setRightChild(nil);
