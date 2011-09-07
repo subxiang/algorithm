@@ -39,12 +39,14 @@ public class BinaryTree<T extends Comparable<T>> {
 	public BinaryNode<T> insert(T obj) {
 		BinaryNode<T> p = null;
 		BinaryNode<T> x = root;
+		int c = 0;
 		while (x != null) {
 			p = x;
-			if (obj.compareTo(x.getData()) < 0) {
-				x = x.getLeftChild();
+			c = obj.compareTo(p.getData());
+			if (c < 0) {
+				x = p.getLeftChild();
 			} else {
-				x = x.getRightChild();
+				x = p.getRightChild();
 			}
 		}
 		
@@ -54,7 +56,7 @@ public class BinaryTree<T extends Comparable<T>> {
 		if (p == null) {
 			root = n;
 		} else {
-			if (obj.compareTo(p.getData()) < 0) {
+			if (c < 0) {
 				p.setLeftChild(n);
 			} else {
 				p.setRightChild(n);
@@ -133,6 +135,18 @@ public class BinaryTree<T extends Comparable<T>> {
 				p = p.getParent();
 			}
 			return p;
+		}
+	}
+
+	public int height() {
+		return height(root);
+	}
+
+	private int height(BinaryNode<T> n) {
+		if (n != null) {
+			return 1 + Math.max(height(n.getLeftChild()), height(n.getRightChild()));
+		} else {
+			return 0;
 		}
 	}
 }

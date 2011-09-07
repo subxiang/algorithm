@@ -2,6 +2,8 @@ package com.darkart.algo;
 
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 import junit.framework.TestCase;
@@ -10,6 +12,8 @@ import org.junit.Test;
 
 import com.darkart.algo.ds.BinaryTree;
 import com.darkart.algo.ds.Node;
+import com.darkart.algo.ds.RedBlackNode;
+import com.darkart.algo.ds.RedBlackTree;
 import com.darkart.algo.ds.Visitor;
 
 public class SortingTest extends TestCase {
@@ -30,7 +34,12 @@ public class SortingTest extends TestCase {
 			input[i] = Math.abs(rnd.nextInt());
 //			input[i] = rnd.nextDouble();
 		}
-		
+//		Arrays.sort(input);
+//		for (int i = 0; i < input.length / 2; i++) {
+//			int temp = input[i];
+//			input[i] = input[input.length - 1 - i];
+//			input[input.length -  1 -i] = temp;
+//		}
 		ref = Arrays.copyOf(input, input.length);
 		
 		startTime = Calendar.getInstance().getTimeInMillis();
@@ -49,7 +58,7 @@ public class SortingTest extends TestCase {
 
 	@Test
 	public void testHeapsort() {
-//		Sorting.radixSort(input);
+		Sorting.radixSort(input);
 //		Sorting.quickSortHoare(input);
 //		Sorting.quickSort(input);
 //		Arrays.sort(input);
@@ -61,21 +70,5 @@ public class SortingTest extends TestCase {
 		
 //		Sorting.countingSort(input);
 //		Sorting.bucketSort(input);
-		
-//		BinaryTree<Integer> tree = new BinaryTree<Integer>();
-//		for (int i = 0; i < input.length; i++) {
-//			tree.insert(input[i]);
-//		}
-//		
-//		tree.inOrderWalk(new Visitor() {
-//			int i = 0;
-//
-//			@Override
-//			public void visit(Node n) {
-//				input[i++] = (Integer)n.getData();
-//			}
-//			
-//		});
 	}
-
 }
