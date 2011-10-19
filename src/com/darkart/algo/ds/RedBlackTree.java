@@ -55,7 +55,7 @@ public class RedBlackTree<T extends Comparable<T>> {
 
 	private void fixRedBlackInsert(RedBlackNode<T> n) {
 		RedBlackNode<T> p = n.getParent();
-		while (n.getColor() == Color.RED && p.getColor() == Color.RED) {
+		while (p.getColor() == Color.RED) {
 			RedBlackNode<T> pp = p.getParent();
 			if (p == pp.getLeftChild()) {
 				if (n == p.getRightChild()) {

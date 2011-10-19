@@ -73,7 +73,7 @@ public class AVLTree<T extends Comparable<T>> {
 			if (n == p.getLeftChild()) {
 				AVLNode<T> s = p.getRightChild();
 				if (n.getHeight() == s.getHeight() - 2) {
-					if (s.getLeftChild().getHeight() > n.getRightChild().getHeight()) {
+					if (s.getLeftChild().getHeight() > s.getRightChild().getHeight()) {
 						s = rightRotate(s);
 						updateHeight(s.getRightChild());
 						updateHeight(s);
@@ -86,10 +86,10 @@ public class AVLTree<T extends Comparable<T>> {
 			} else {
 				AVLNode<T> s = p.getLeftChild();
 				if (n.getHeight() == s.getHeight() - 2) {
-					if (s.getRightChild().getHeight() > n.getLeftChild().getHeight()) {
-						n = leftRotate(n);
-						updateHeight(n.getLeftChild());
-						updateHeight(n);
+					if (s.getRightChild().getHeight() > s.getLeftChild().getHeight()) {
+						s = leftRotate(s);
+						updateHeight(s.getLeftChild());
+						updateHeight(s);
 					}
 					p = rightRotate(p);
 					updateHeight(p.getRightChild());
